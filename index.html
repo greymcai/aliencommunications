@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Communication – Experience, Innovation. Expert Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0B0D12;
+            color: #ffffff;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(11, 13, 18, 0.8), rgba(11, 13, 18, 0.8)), url('https://images.unsplash.com/photo-1673798880756-889117cacb7e?q=80&w=1670&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.3);
+            border-color: #1E90FF;
+        }
+        .btn-primary {
+            background-color: #1E90FF;
+            color: white;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #1a237e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(26, 35, 126, 0.3);
+        }
+        .footer-link:hover {
+            color: #00FF7F;
+        }
+        section {
+            padding: 100px 0;
+        }
+        .glass-card {
+            background: rgba(30, 144, 255, 0.05);
+            border: 1px solid rgba(30, 144, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .text-cyan-400 {
+            color: #1E90FF;
+        }
+        .text-green-400 {
+            color: #00FF7F;
+        }
+        .bg-gray-900 {
+            background-color: #0B0D12;
+        }
+        .text-gray-300 {
+            color: #ffffff;
+        }
+        .text-gray-400 {
+            color: #cccccc;
+        }
+        .text-gray-500 {
+            color: #999999;
+        }
+        .border-gray-800 {
+            border-color: rgba(30, 144, 255, 0.2);
+        }
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(11,13,18,.95);
+            z-index: 60;
+        }
+        .menu-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gray-900 shadow-lg z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center hovered-element">
+            <div class="flex items-center">
+                <img src="https://github.com/greymcai/aliencommunications/raw/main/AlienCommLogoWhite.png" alt="Alien Communications" class="h-16" style="mix-blend-mode: lighten; opacity: 0.9;">
+            </div>
+            <nav class="hidden md:flex space-x-10 hovered-element items-center">
+                <a href="#home" class="text-white hover:text-cyan-400 font-medium transition text-lg">Home</a>
+                <a href="#about" class="text-white hover:text-cyan-400 font-medium transition text-lg">About Us</a>
+                <a href="#services" class="text-white hover:text-cyan-400 font-medium transition text-lg">Services</a>
+                <a href="#contact" class="text-white hover:text-cyan-400 font-medium transition text-lg">Contact</a>
+                <a href="tel:+27410001234" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-blue-700 transition whitespace-nowrap">
+                    <i data-feather="phone" class="w-4 h-4 inline mr-1"></i>
+                    Call Us
+                </a>
+            </nav>
+            <button id="menuToggle" class="md:hidden text-gray-300 hovered-element">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay">
+        <nav class="flex flex-col items-center space-y-8 text-white text-2xl font-semibold">
+            <a href="#home" class="menu-link">Home</a>
+            <a href="#about" class="menu-link">About Us</a>
+            <a href="#services" class="menu-link">Services</a>
+            <a href="#contact" class="menu-link">Contact</a>
+        </nav>
+        <button id="menuClose" class="absolute top-6 right-6 text-white">
+            <i data-feather="x" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white" data-aos="fade-up">EXPERIENCE. INNOVATION.</h1>
+            <h2 class="text-4xl md:text-6xl font-bold mb-10 text-white" data-aos="fade-up" data-aos-delay="200">EXPERT SOLUTIONS</h2>
+            <p class="text-2xl max-w-4xl mx-auto mb-12 text-white" data-aos="fade-up" data-aos-delay="400">
+                With over 20 years of specialized expertise in telecommunications and electrical solutions, Alien Communications stands at the forefront of industry excellence.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="600">
+                <a href="#contact" class="btn-primary px-10 py-4 rounded-lg font-semibold text-xl">Contact Us</a>
+                <a href="#services" class="bg-transparent border-2 border-blue-600 text-blue-600 px-10 py-4 rounded-lg font-semibold text-xl hover:bg-blue-600 hover:text-white transition">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 glass-card p-8 rounded-lg" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6 text-cyan-400">Expertise You Can Trust</h2>
+                    <p class="text-gray-300 mb-6">
+                        With over 20 years of specialized expertise in telecommunications and electrical solutions, Alien Communications stands at the forefront of industry excellence. Our dedicated teams bring together decades of accumulated experience, pioneering advancements that set new benchmarks. We don't just keep up—we lead, delivering cutting-edge solutions that redefine standards and prioritize customer success.
+                    </p>
+                    <h2 class="text-3xl font-bold mb-6 text-cyan-400">Innovative Solutions</h2>
+                    <p class="text-gray-300 mb-6">
+                        With over 20 years of specialized expertise in telecommunications and electrical solutions, Alien Communications stands at the forefront of industry excellence. Our dedicated teams bring together decades of accumulated experience, pioneering advancements that set new benchmarks. We don't just keep up—we lead, delivering cutting-edge solutions that redefine standards and prioritize customer success.
+                        We don't just meet customer expectations—we exceed them. With a commitment to excellence, our highly qualified team delivers tailored solutions that prioritize every client's needs. Backed by unique expertise and forward-thinking innovation, we set new industry standards, pioneering solutions that push boundaries and lead the way. Experience service that goes beyond the norm—where your success is our priority.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-lg" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Comprehensive Specialist Services</h3>
+                    <p class="text-gray-300 mb-6">
+                        Alien Communications delivers comprehensive technical specialist services across the telecommunications, civil, building, and electric utility sectors. With a customer-first approach, we forge lasting, mutually beneficial partnerships with like-minded businesses, ensuring tailored solutions that drive success.
+                    </p>
+                    <p class="text-gray-300">
+                        While our roots are in the Eastern Cape, our expertise extends nationwide, with a proven track record in the Western Cape, Gauteng, and KwaZulu-Natal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Gallery Section -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4 text-cyan-400">Our Services </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    With over two decades of specialized experience in the telecommunications and electrical industry, Alien Communications sets the precedent for excellence.
+                </p>
+            </div>
+
+            <!-- Services Carousel -->
+            <div class="relative overflow-hidden">
+                <div class="services-carousel flex transition-transform duration-500 ease-in-out" style="transform: translateX(0px)">
+                    <!-- RF Solutions -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up">
+                        <img src="http://static.photos/technology/320x240/10?theme=neon" alt="RF Solutions - Wireless network installations and optimizations" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-lg font-bold mb-2 text-black">RF SOLUTIONS</h3>
+                        <p class="text-gray-600 text-sm">Wireless network installations and optimizations</p>
+                    </div>
+                    
+                    <!-- Fibre Services -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="100">
+                        <img src="http://static.photos/technology/320x240/11?theme=neon" alt="Fibre Services - High-speed internet infrastructure" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-lg font-bold mb-2 text-black">FIBRE SERVICES</h3>
+                        <p class="text-gray-600 text-sm">High-speed internet infrastructure</p>
+                    </div>
+                    
+                    <!-- Electrical Services -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="200">
+                        <img src="http://static.photos/technology/320x240/12?theme=neon" alt="Electrical Services - Commercial power solutions" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-lg font-bold mb-2 text-black">ELECTRICAL SERVICES</h3>
+                        <p class="text-gray-600 text-sm">Commercial power solutions</p>
+                    </div>
+                    
+                    <!-- HVAC -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="300">
+                        <img src="http://static.photos/technology/320x240/13?theme=neon" alt="HVAC Systems - Climate control installations" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-lg font-bold mb-2 text-black">HVAC</h3>
+                        <p class="text-gray-600 text-sm">Climate control installations</p>
+                    </div>
+                    
+                    <!-- Container Relocation -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="400">
+                        <img src="http://static.photos/technology/320x240/14?theme=neon" alt="Container Relocation - Secure equipment transportation" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-lg font-bold mb-2 text-black">CONTAINER RELOCATION</h3>
+                        <p class="text-gray-600 text-sm">Secure equipment transportation</p>
+                    </div>
+                    
+                    <!-- EMS & AD-HOC PROJECTS -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="500">
+                        <img src="http://static.photos/technology/320x240/15?theme=neon" alt="EMS Projects - Emergency maintenance services" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-sm font-bold mb-2 text-black">EMS & AD-HOC PROJECTS</h3>
+                        <p class="text-gray-600 text-sm">Emergency maintenance services</p>
+                    </div>
+                    
+                    <!-- FIELD MAINTENANCE ENGINEERING -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="600">
+                        <img src="http://static.photos/technology/320x240/16?theme=neon" alt="Field Maintenance - On-site technical support" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-sm font-bold mb-2 text-black">FIELD MAINTENANCE ENGINEERING</h3>
+                        <p class="text-gray-600 text-sm">On-site technical support</p>
+                    </div>
+                    
+                    <!-- VANDALISED SITE REINSTATEMENTS -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="700">
+                        <img src="http://static.photos/technology/320x240/17?theme=neon" alt="Site Reinstatement - Security breach recovery" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-sm font-bold mb-2 text-black">VANDALISED SITE REINSTATEMENTS</h3>
+                        <p class="text-gray-600 text-sm">Security breach recovery</p>
+                    </div>
+                    
+                    <!-- MICROWAVE NETWORK SERVICES -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="800">
+                        <img src="http://static.photos/technology/320x240/18?theme=neon" alt="Microwave Networks - Wireless communication systems" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-sm font-bold mb-2 text-black">MICROWAVE NETWORK SERVICES</h3>
+                        <p class="text-gray-600 text-sm">Wireless communication systems</p>
+                    </div>
+                    
+                    <!-- IT & NETWORK EQUIPMENT -->
+                    <div class="service-card bg-white p-6 rounded-lg text-center shadow-md mx-4 min-w-[300px]" data-aos="fade-up" data-aos-delay="900">
+                        <img src="http://static.photos/technology/320x240/19?theme=neon" alt="Network Equipment - Enterprise IT infrastructure" class="w-full h-40 object-cover rounded mb-4">
+                        <h3 class="text-sm font-bold mb-2 text-black">IT & NETWORK EQUIPMENT</h3>
+                        <p class="text-gray-600 text-sm">Enterprise IT infrastructure</p>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-cyan-400 text-white p-3 rounded-full shadow-lg hover:bg-cyan-500 transition z-10">
+                    <i data-feather="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-cyan-400 text-white p-3 rounded-full shadow-lg hover:bg-cyan-500 transition z-10">
+                    <i data-feather="chevron-right" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#contact" class="btn-primary text-white px-8 py-3 rounded-full font-semibold inline-block">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4 text-cyan-400">Let's Partner Up</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Call us today to discuss how we can help your business</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right" class="h-full">
+                    <div class="w-full h-full bg-gray-800 rounded-lg flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <i data-feather="map-pin" class="w-16 h-16 text-cyan-400 mx-auto mb-4"></i>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-2">Alien Communications</h3>
+                            <p class="text-gray-300">123 Tech Road, Gqeberha</p>
+                            <p class="text-gray-300">Eastern Cape, 6000, South Africa</p>
+                            <p class="text-gray-400 mt-4">Coordinates: -33.9945538, 25.4626591</p>
+                            <a href="https://maps.google.com/?q=-33.9945538,25.4626591" target="_blank" class="inline-block mt-6 px-6 py-2 bg-cyan-400 text-white rounded-lg hover:bg-cyan-500 transition">
+                                Open in Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <form class="glass-card p-8 rounded-lg" id="whatsappForm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 font-medium mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="tel" class="block text-gray-300 font-medium mb-2">Telephone Number *</label>
+                            <input type="tel" id="tel" name="phone" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 font-medium mb-2">Email *</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="regarding" class="block text-gray-300 font-medium mb-2">Regarding *</label>
+                            <select id="regarding" name="service" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" required>
+                                <option value="">Select an option</option>
+                                <option value="RF Solutions">RF Solutions</option>
+                                <option value="Fibre Services">Fibre Services</option>
+                                <option value="Electrical Services">Electrical Services</option>
+                                <option value="HVAC">HVAC</option>
+                                <option value="Container Relocation">Container Relocation</option>
+                                <option value="EMS & Ad-Hoc Projects">EMS & Ad-Hoc Projects</option>
+                                <option value="Field Maintenance Engineering">Field Maintenance Engineering</option>
+                                <option value="Vandalised Site Reinstatements">Vandalised Site Reinstatements</option>
+                                <option value="Microwave Network Services">Microwave Network Services</option>
+                                <option value="IT & Network Equipment">IT & Network Equipment</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Quote Request">Quote Request</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 font-medium mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" required></textarea>
+                        </div>
+                        <button type="button" onclick="sendToWhatsApp()" class="btn-primary text-white px-6 py-3 rounded font-semibold w-full">Send via WhatsApp</button>
+                        <div id="form-status" class="hidden mt-4 p-4 bg-green-600 text-white rounded"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="https://github.com/greymcai/aliencommunications/raw/main/AlienCommLogoWhite.png" alt="Alien Communications" class="h-16 mb-4" style="mix-blend-mode: lighten; opacity: 0.9;">
+                    <p class="text-gray-400">
+                        Over 20 years of specialized expertise in telecommunications and electrical solutions, Alien Communications stands at the forefront of industry excellence.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-cyan-400">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">RF SOLUTIONS</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">FIBRE SERVICES</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">ELECTRICAL SERVICES</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">HVAC SYSTEMS</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">CONTAINER RELOCATION</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-cyan-400">More Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">EMS & AD-HOC PROJECTS</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">FIELD MAINTENANCE ENGINEERING</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">VANDALIZED SITE REINSTATEMENTS</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">MICROWAVE NETWORK SERVICES</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-blue-600">IT & NETWORK EQUIPMENT SERVICES</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-cyan-400">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="footer-link text-gray-600 hover:text-blue-600">Home</a></li>
+                        <li><a href="#about" class="footer-link text-gray-600 hover:text-blue-600">About Us</a></li>
+                        <li><a href="#services" class="footer-link text-gray-600 hover:text-blue-600">Services</a></li>
+                        <li><a href="#contact" class="footer-link text-gray-600 hover:text-blue-600">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 mb-4 md:mb-0">Innovating Industry Standards</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-cyan-400 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-cyan-400 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-cyan-400 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+                <p class="text-center text-gray-600 mt-8">© 2025 ALIEN COMMUNICATION. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        feather.replace();
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuClose = document.getElementById('menuClose');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function openMenu() {
+            menuOverlay.classList.add('active');
+        }
+        function closeMenu() {
+            menuOverlay.classList.remove('active');
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        menuClose.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Carousel functionality
+        const carousel = document.querySelector('.services-carousel');
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+        const serviceCards = document.querySelectorAll('.service-card');
+        let currentPosition = 0;
+        const cardWidth = 300 + 32; // width + margin
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentPosition}px)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            const maxPosition = (serviceCards.length * cardWidth) - carousel.parentElement.offsetWidth;
+            currentPosition = Math.min(currentPosition + cardWidth * 3, maxPosition);
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentPosition = Math.max(currentPosition - cardWidth * 3, 0);
+            updateCarousel();
+        });
+
+        // WhatsApp form handling
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('tel').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('regarding').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !phone || !email || !service || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            const whatsappMessage = `New Contact Form Submission from Alien Communications Website:
+            
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Service: ${service}
+Message: ${message}`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/27815571278?text=${encodedMessage}`, '_blank');
+            
+            // Show success message
+            const formStatus = document.getElementById('form-status');
+            formStatus.textContent = 'Opening WhatsApp to send your message...';
+            formStatus.classList.remove('hidden');
+            formStatus.classList.add('bg-green-600');
+            
+            // Clear form after 2 seconds
+            setTimeout(() => {
+                document.getElementById('whatsappForm').reset();
+                formStatus.classList.add('hidden');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
